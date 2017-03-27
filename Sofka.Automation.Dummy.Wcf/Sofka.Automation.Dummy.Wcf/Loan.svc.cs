@@ -15,6 +15,9 @@ namespace Sofka.Automation.Dummy.Wcf
         public LoanRequestResponse LoanRequest(LoanRequestRequest request)
         {
             LoanRequestResponse response = new LoanRequestResponse();
+            response.ErrorMessage = "Error!";
+            response.AmmountRequested = 10000;
+            response.AmmountApproved = 5000;
 
             return response;
         }        

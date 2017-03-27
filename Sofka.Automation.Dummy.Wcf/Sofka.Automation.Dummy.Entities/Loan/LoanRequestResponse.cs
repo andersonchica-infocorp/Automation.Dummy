@@ -18,7 +18,7 @@ namespace Sofka.Automation.Dummy.Entities.Loan
         public string Name { get; set; }
 
         [DataMember]
-        public ControlRiskState ControlRiskState { get; set; }
+        public bool ControlRiskState { get; set; }
 
         [DataMember]
         public decimal AmmountRequested { get; set; }
@@ -28,5 +28,8 @@ namespace Sofka.Automation.Dummy.Entities.Loan
 
         [DataMember]
         public bool Approved { get; set; }
+
+        [DataMember]
+        public string ErrorMessage { get; set; }
     }
 }

@@ -8,5 +8,8 @@ namespace Sofka.Automation.Dummy.Entities.Enumerations
 {
     public enum LoanType
     {
+        Car,
+        Mortgages,
+        Appliance
     }
 }

@@ -8,6 +8,6 @@ namespace Sofka.Automation.Dummy.Entities.Enumerations
 {
     public enum ControlRiskState 
     {
-
+        
     }
 }
