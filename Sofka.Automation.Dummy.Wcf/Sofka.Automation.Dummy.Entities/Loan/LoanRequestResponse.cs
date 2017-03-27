@@ -15,10 +15,7 @@ namespace Sofka.Automation.Dummy.Entities.Loan
         public int Id { get; set; }
 
         [DataMember]
-        public string Name { get; set; }
-
-        [DataMember]
-        public bool ControlRiskState { get; set; }
+        public bool ControlRiskStateReported { get; set; }
 
         [DataMember]
         public decimal AmmountRequested { get; set; }
