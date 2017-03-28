@@ -83,6 +83,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Sofka.Automation.Dummy.BusinessComponent\Sofka.Automation.Dummy.BusinessComponent.csproj">
+      <Project>{1638b23b-f200-41da-a29c-7e51b8c89434}</Project>
+      <Name>Sofka.Automation.Dummy.BusinessComponent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sofka.Automation.Dummy.Entities\Sofka.Automation.Dummy.Entities.csproj">
       <Project>{11BDCD75-54FD-40E1-9781-A5389D86278B}</Project>
       <Name>Sofka.Automation.Dummy.Entities</Name>

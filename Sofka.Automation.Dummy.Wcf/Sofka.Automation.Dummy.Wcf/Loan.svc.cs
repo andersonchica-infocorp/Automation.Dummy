@@ -14,10 +14,8 @@ namespace Sofka.Automation.Dummy.Wcf
     {
         public LoanRequestResponse LoanRequest(LoanRequestRequest request)
         {
-            LoanRequestResponse response = new LoanRequestResponse();
-            return response;
+            BusinessComponent.Loan loanBusiness = new BusinessComponent.Loan();
+            return loanBusiness.ValidateLoanRequest(request);
         }
-
-
     }
 }

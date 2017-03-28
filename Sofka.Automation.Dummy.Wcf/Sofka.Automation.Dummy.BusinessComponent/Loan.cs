@@ -12,6 +12,7 @@ namespace Sofka.Automation.Dummy.BusinessComponent
         public LoanRequestResponse ValidateLoanRequest(LoanRequestRequest request)
         {
             LoanRequestResponse response = new LoanRequestResponse();
+            response.AmmountRequested = request.AmmountRequested;
 
             response.ErrorMessage = this.ValidateClientInformation(request);
             if (string.IsNullOrEmpty(response.ErrorMessage))
@@ -36,11 +37,11 @@ namespace Sofka.Automation.Dummy.BusinessComponent
             return response;
         }
 
-        public string ValidateClientInformation(LoanRequestRequest request)
+        private string ValidateClientInformation(LoanRequestRequest request)
         {
             string response = string.Empty;
 
-            if (request.Id > 17)
+            if (request.Id > 13)
             {
                 response = "the current Id client does not exist";
             }
@@ -52,11 +53,11 @@ namespace Sofka.Automation.Dummy.BusinessComponent
             return response;
         }
 
-        public string ValidateRiskCenter(LoanRequestRequest request)
+        private string ValidateRiskCenter(LoanRequestRequest request)
         {
             string response = string.Empty;
 
-            if (request.Id == 1 || request.Id == 5 || request.Id == 15)
+            if (request.Id == 1 || request.Id == 5)
             {
                 response = "The client is reported in the risk center";
             }
@@ -64,7 +65,7 @@ namespace Sofka.Automation.Dummy.BusinessComponent
             return response;
         }
 
-        public string ValidateBorrowingCapacity(LoanRequestRequest request)
+        private string ValidateBorrowingCapacity(LoanRequestRequest request)
         {
             string response = string.Empty;
 
@@ -84,7 +85,7 @@ namespace Sofka.Automation.Dummy.BusinessComponent
             }
             else if (request.Id == 11)
             {
-                if (request.AmmountRequested > 9000)
+                if (request.AmmountRequested > 50000)
                 {
                     response = "The ammount requested is higher than the borrowing capacity";
                 }
@@ -93,21 +94,29 @@ namespace Sofka.Automation.Dummy.BusinessComponent
             return response;
         }
 
-        public decimal CalculateAmmountApproved(LoanRequestRequest request)
+        private decimal CalculateAmmountApproved(LoanRequestRequest request)
         {
             decimal response = 0;
 
-            if (request.Id == 9)
+            if (request.Id == 3)
+            {
+                response = 4000;
+            }
+            else if (request.Id == 7)
+            {
+                response = 7000;
+            }
+            else if (request.Id == 9)
             {
                 response = 5000;
+            }
+            else if(request.Id == 11)
+            {
+                response = 50000;
             }
             else if (request.Id == 13)
             {
                 response = 15000;
-            }
-            else if (request.Id == 17)
-            {
-                response = 50000;
             }
 
             return response;
