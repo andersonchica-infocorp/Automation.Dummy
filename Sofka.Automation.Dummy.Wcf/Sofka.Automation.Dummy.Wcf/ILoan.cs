@@ -14,5 +14,8 @@ namespace Sofka.Automation.Dummy.Wcf
     {
         [OperationContract]
         LoanRequestResponse LoanRequest(LoanRequestRequest request);
+
+        [OperationContract]
+        LoanRequestResponse Prueba(string CustomerId);
     }
 }

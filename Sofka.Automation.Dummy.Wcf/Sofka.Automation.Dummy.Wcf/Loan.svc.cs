@@ -17,5 +17,17 @@ namespace Sofka.Automation.Dummy.Wcf
             BusinessComponent.Loan loanBusiness = new BusinessComponent.Loan();
             return loanBusiness.ValidateLoanRequest(request);
         }
+
+        public LoanRequestResponse Prueba(string CustomerId)
+        {
+            return new LoanRequestResponse
+            {
+                AmmountApproved = 1000,
+                AmmountRequested = 1000,
+                Approved = true,
+                ErrorMessage = "hola",
+                Id = 1
+            };
+        }
     }
 }
